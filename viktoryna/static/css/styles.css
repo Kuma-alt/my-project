@@ -1,0 +1,48 @@
+/* Загальні стилі для кнопок */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Клас для кнопки реєстрації */
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Клас для кнопки входу */
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Клас для кнопки на головній сторінці */
+.btn-home {
+    background-color: #6c757d;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+}
+
+.btn-home:hover {
+    background-color: #5a6268;
+    transform: scale(1.05);
+}
