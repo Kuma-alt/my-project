@@ -1,0 +1,26 @@
+{% extends 'app_viktoryna/base.html' %}
+
+{% block content %}
+    <h2>Створити вікторину</h2>
+    <form method="post">
+        {% csrf_token %}
+        
+        <h3>Назва вікторини</h3>
+        {{ quiz_form.as_p }}
+
+        <h3>Питання</h3>
+        {{ question_formset.management_form }}
+        {% for form in question_formset %}
+            {{ form.as_p }}
+        {% endfor %}
+
+        <h3>Відповіді</h3>
+        {{ answer_formset.management_form }}
+        {% for form in answer_formset %}
+            {{ form.as_p }}
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">Зберегти вікторину</button>
+    </form>
+{% endblock %}
+

@@ -1,20 +1,16 @@
-{% load static %}
+{% extends 'app_viktoryna/base.html' %}
 
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Головна сторінка</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-</head>
-<body>
-    <div class="container mt-5">
-        <h1 class="text-center mb-4">Головна сторінка</h1>
-        <div class="text-center">
-            <a href="{% url 'register' %}" class="btn btn-success">Зареєструватися</a>
-            <a href="{% url 'login' %}" class="btn btn-primary">Увійти</a>
-        </div>
-    </div>
-</body>
-</html>
+{% block content %}
+    <h1>Вікторини</h1>
+    <a href="{% url 'create_quiz' %}" class="btn btn-primary">Створити вікторину</a>
+    <ul>
+        {% for quiz in quizzes %}
+            <li><a href="{% url 'quiz_detail' quiz.id %}">{{ quiz.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
+
+
+
